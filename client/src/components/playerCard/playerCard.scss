@@ -1,0 +1,32 @@
+.card.player-card {
+  display: flex;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 1rem;
+  margin: 2rem 0rem;
+  padding: 2rem;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+  justify-content: space-between;
+  .card--logo {
+    padding-top: 20px;
+    max-width: 50px;
+    img {
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+  .card-info {
+    width: 60%;
+  }
+
+  .status {
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+}

@@ -9,6 +9,7 @@ const playerSchema = new Schema({
   gender: String,
   email: String,
   phone: String,
+  teamId: String
 });
 
 module.exports = mongoose.model("Player", playerSchema);

@@ -10,6 +10,12 @@ const gameSchema = new Schema({
   endDate: String,
   logo: String,
   winner: String,
+  teams: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Team",
+    },
+  ],
 });
 
 module.exports = mongoose.model("Game", gameSchema);

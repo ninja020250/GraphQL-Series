@@ -19,7 +19,7 @@ import { getPlayersQuery } from "queries/queries";
     return (
       <div className="games">
         <div className="status">
-          <h1>Active Games</h1>
+          <h1>Player List</h1>
           <input type="text" />
         </div>
         <div className="cards cards-player">

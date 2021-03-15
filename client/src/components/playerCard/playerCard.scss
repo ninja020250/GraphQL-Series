@@ -12,10 +12,27 @@
   justify-content: space-between;
   .card--logo {
     padding-top: 20px;
-    max-width: 50px;
-    img {
-      border-radius: 50%;
+    max-width: 100px;
+    position: relative;
+    .team-name {
+      color: #658ec6;
+      font-weight: 500;
+      margin-bottom: 1rem;
       width: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .team-logo {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .profile-logo {
+      left: 50%;
+      top: 90%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      border-radius: 50%;
+      width: 50px;
     }
   }
   .card-info {

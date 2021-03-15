@@ -25,6 +25,10 @@ const getPlayersQuery = gql`
       gender
       email
       phone
+      team {
+        name
+        logo
+      }
     }
   }
 `;

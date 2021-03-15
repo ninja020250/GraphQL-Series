@@ -1,18 +1,44 @@
 import React from "react";
-
-const FEMALE_AVATAR =
-  "https://as2.ftcdn.net/jpg/01/96/47/15/500_F_196471509_WG1kfiqKdYkPxk7WLibohyxnt4g3QNPn.jpg";
-const MALE_AVATAR =
-  "https://www.clipartkey.com/mpngs/m/128-1284186_semantic-ui-avatar.png";
+import {
+  MALE_AVATAR,
+  FEMALE_AVATAR,
+  NO_TEAM,
+} from "components/playerCard/constants";
 
 export default function GameCard(props) {
-  const { name, phone, gender, account, email, age } = props;
+  const { name, phone, gender, account, email, team } = props;
+
+  const renderProfileInTeam = (team, gender) => {
+    return (
+      <div className="card--logo">
+        <div className="team-name">{team?.name}</div>
+        <img className="team-logo" src={team?.logo} alt="team" />
+        <img
+          className="profile-logo"
+          src={gender === "nam" ? MALE_AVATAR : FEMALE_AVATAR}
+          alt=""
+        />
+      </div>
+    );
+  };
+
+  const renderProfile = (gender) => {
+    return (
+      <div className="card--logo">
+        <div className="team-name">{"No Team"}</div>
+        <img className="team-logo" src={NO_TEAM} alt="team" />
+        <img
+          className="profile-logo"
+          src={gender === "nam" ? MALE_AVATAR : FEMALE_AVATAR}
+          alt=""
+        />
+      </div>
+    );
+  };
 
   return (
     <div className="card player-card">
-      <div className="card--logo">
-        <img src={gender === "nam" ? MALE_AVATAR : FEMALE_AVATAR} alt="" />
-      </div>
+      {team ? renderProfileInTeam(team, gender) : renderProfile(gender)}
       <div className="card-info">
         <h2>{`${name} - ${account}`}</h2>
         <p>{`email: ${email}`}</p>

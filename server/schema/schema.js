@@ -28,7 +28,9 @@ const PlayerType = new GraphQLObjectType({
     team: {
       type: TeamType,
       resolve(parent, args) {
-        return Team.findById(parent.teamId);
+        if (parent.teamId) {
+          return Team.findById(parent.teamId);
+        }
       },
     },
   }),

@@ -16,6 +16,14 @@ class PlayerContainer extends Component {
     searchValue: "",
   };
 
+  static getDerivedStateFromProps(props, state) {
+    const { getPlayersQuery } = props;
+    const { players = [] } = getPlayersQuery;
+    return {
+      list: players,
+    };
+  }
+
   componentDidMount() {
     const { getPlayersQuery } = this.props;
     const { players = [] } = getPlayersQuery;
@@ -28,6 +36,7 @@ class PlayerContainer extends Component {
     const { value } = e.target;
     const { getPlayersQuery } = this.props;
     const { players } = getPlayersQuery;
+
     const list = _.filter(players, (player) => {
       const searchContent = player.name + player.account;
       return searchContent.toLowerCase().includes(value.toLowerCase());
@@ -48,6 +57,9 @@ class PlayerContainer extends Component {
       refetchQueries: [
         {
           query: getPlayersQuery,
+        },
+        {
+          query: getTeamsQuery,
         },
       ],
     });

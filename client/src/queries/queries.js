@@ -15,6 +15,24 @@ const getGamesQuery = gql`
   }
 `;
 
+const getTeamsQuery = gql`
+  {
+    teams {
+      id
+      name
+      logo
+      games {
+        id
+        name
+      }
+      players {
+        id
+        name
+      }
+    }
+  }
+`;
+
 const getPlayersQuery = gql`
   {
     players {
@@ -79,4 +97,22 @@ const addBookMutation = gql`
   }
 `;
 
-export { getBooksQuery, getAuthorsQuery, addBookMutation, getBookQuery, getGamesQuery, getPlayersQuery };
+const joinTeamMutation = gql`
+  mutation($teamId: ID!, $playerId: ID!) {
+    joinTeam(teamId: $teamId, playerId: $playerId) {
+      id
+      name
+    }
+  }
+`;
+
+export {
+  getBooksQuery,
+  getAuthorsQuery,
+  addBookMutation,
+  getBookQuery,
+  getGamesQuery,
+  getPlayersQuery,
+  getTeamsQuery,
+  joinTeamMutation,
+};

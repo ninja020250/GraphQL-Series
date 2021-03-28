@@ -4,9 +4,21 @@ import {
   FEMALE_AVATAR,
   NO_TEAM,
 } from "components/playerCard/constants";
+import { Button, ButtonGroup } from "@chakra-ui/react";
+import JoinTeamDialog from "components/joinTeamDialog/JoinTeamDialog";
 
-export default function GameCard(props) {
-  const { name, phone, gender, account, email, team } = props;
+export default function PlayerCard(props) {
+  const {
+    id,
+    name,
+    phone,
+    gender,
+    account,
+    email,
+    team,
+    getTeamsQuery,
+    handleJoinTeam,
+  } = props;
 
   const renderProfileInTeam = (team, gender) => {
     return (
@@ -43,6 +55,13 @@ export default function GameCard(props) {
         <h2>{`${name} - ${account}`}</h2>
         <p>{`email: ${email}`}</p>
         <p>{`phone: ${phone}`}</p>
+        {!team && (
+          <JoinTeamDialog
+            playerId={id}
+            getTeamsQuery={getTeamsQuery}
+            onsubmit={handleJoinTeam}
+          />
+        )}
       </div>
       <h2 className="status">{"Ready"}</h2>
     </div>

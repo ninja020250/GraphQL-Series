@@ -1,0 +1,57 @@
+.card.player-card {
+  display: flex;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 1rem;
+  margin: 2rem 0rem;
+  padding: 2rem;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+  justify-content: space-between;
+  .team-name {
+    color: #658ec6;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .team-logo {
+    width: 100%;
+    border-radius: 5px;
+  }
+  .profile-logo {
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    width: 50px;
+  }
+  .card-info {
+    width: 60%;
+  }
+  .number-of-member {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #6cdbeb;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .list-player {
+    padding-left: 0;
+    list-style-type: none;
+    a {
+      color: #658ec6;
+      text-decoration: none;
+    }
+  }
+}

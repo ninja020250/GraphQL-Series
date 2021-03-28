@@ -2,3 +2,17 @@
 @import "./containers/PlayerContainer/playerContainer.scss";
 @import "./components/gameCard/gameCard.scss";
 @import "./components/playerCard/playerCard.scss";
+@import "./components/teamCard/teamCard.scss";
+@import "./components/joinTeamDialog/joinTeamDialog.scss";
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}

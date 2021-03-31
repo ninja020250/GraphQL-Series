@@ -9,7 +9,15 @@ const playerSchema = new Schema({
   gender: String,
   email: String,
   phone: String,
-  teamId: String
+  teamId: String,
+  username: String,
+  password: String,
+  roles: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Role",
+    },
+  ],
 });
 
 module.exports = mongoose.model("Player", playerSchema);
